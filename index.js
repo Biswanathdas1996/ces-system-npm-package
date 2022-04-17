@@ -1,10 +1,14 @@
 import { getKeyValue, encryptionValue } from "./data/HelperData";
 import getAllKeys from "./data/keys";
 
-export function Encryption(inputdata) {
+export function Encryption(inputdata, key) {
   const encryptions = new Promise((resolve, reject) => {
     let filterKey;
-    filterKey = getAllKeys[Math.floor(Math.random() * getAllKeys.length)];
+    if (!key) {
+      filterKey = getAllKeys[Math.floor(Math.random() * getAllKeys.length)];
+    } else {
+      filterKey = key;
+    }
 
     // Split the string
     const splitSrt = inputdata.split("");
@@ -28,11 +32,17 @@ export function Encryption(inputdata) {
   return encryptions;
 }
 
-export function Decryptions(inputdata) {
+export function Decryptions(inputdata, key) {
   const encryptedText = inputdata;
   const encriptLength = encryptedText.slice(-1);
   // filter key with active ones
-  let filterKey = getAllKeys.find((value) => value.length === encriptLength);
+  let filterKey;
+  if (!key) {
+    filterKey = getAllKeys.find((value) => value.length === encriptLength);
+  } else {
+    filterKey = key;
+  }
+
   // Split the encrypted string with length
   const splitSrt = encryptedText.match(
     new RegExp(".{1," + encriptLength + "}", "g")
