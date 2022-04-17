@@ -87,7 +87,7 @@ export default function EncryptionView() {
 
 ## Advance module
 
-Passing pre-defined logic (key) for encryption and decryption
+Passing customize logic as `key` for encryption and decryption
 
 For encryption
 
@@ -107,10 +107,10 @@ Decryptions(encryptedText, key).then((text) => console.log(text));
 
 > Note: Output would be `I love CES`
 
-## Format of key
+## Format of `key`
 
-key is an object
-you can change the each item of the key in order to customize your encryption rule.
+`key` is an object
+you can change the each item of the `key` in order to customize your encryption rule.
 
 > Ipmortant : `All value must be unique and same length` , `specify the "length" value`
 > For example: if you set `V1: "rtyu"` then the value of `length: "4"`

@@ -1,8 +1,9 @@
 {
   "name": "ces-system",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Customize encryption system for all application that add high end security od data trabsction.",
   "main": "index.js",
+  "repository": "https://github.com/Biswanathdas1996/ces-system-npm-package",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
