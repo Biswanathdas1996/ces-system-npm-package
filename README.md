@@ -27,7 +27,8 @@ For decryption
 
 ```sh
 const encryptedText = "ZEh5c3BjcTJlMzEyNDNuMXFzc3Bjb0BWcE5nZzNkMw=="
-Decryptions(encryptedText).then((text) => console.log(text));
+const decryptTextData = Decryptions(encryptedText);
+console.log(decryptTextData)
 ```
 
 > Note: Output would be `I love CES`
