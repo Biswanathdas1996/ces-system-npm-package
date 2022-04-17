@@ -1,5 +1,4 @@
 import { getKeyValue, encryptionValue } from "./data/HelperData";
-import { Base64 } from "js-base64";
 import getAllKeys from "./data/keys";
 
 export function Encryption(inputdata) {
@@ -23,14 +22,14 @@ export function Encryption(inputdata) {
     });
     //pushing the lenth for identification key
     finalencpt.push(filterKey["length"]);
-    const encrypted = Base64.encode(finalencpt.join(""));
+    const encrypted = finalencpt.join("");
     resolve(encrypted);
   });
   return encryptions;
 }
 
 export function Decryptions(inputdata) {
-  const encryptedText = Base64.decode(inputdata);
+  const encryptedText = inputdata;
   const encriptLength = encryptedText.slice(-1);
   // filter key with active ones
   let filterKey = getAllKeys.find((value) => value.length === encriptLength);
